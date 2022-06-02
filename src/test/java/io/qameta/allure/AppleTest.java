@@ -1,34 +1,31 @@
 package io.qameta.allure;
 
 import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import static io.qameta.allure.Allure.step;
 
+@Owner("eroshenkoam")
+@Feature("Авторизация")
+@Story("Внешняя авторизация")
 public class AppleTest {
 
     @Test
-    @AllureId("1137")
+    @AllureId("1532")
     @DisplayName("Авторизация через Apple")
-    @Tag("web")
-    @Story("Внешняя авторизация")
-    @Owner("admin")
-    @Feature("Авторизация")
     public void testAuth() {
         step("Открываем главную страницу");
-        step("Выбираем способ авторизации через Apple");
-        step("Авторизуемся как пользователь `Random User 10`", () -> {
-            step("Вводим логин `random-user-10`");
-            step("Вводим пароль `random-pass-10`");
+        step("Выбираем способ авторизации Apple");
+        step("Авторизуемся как пользователь `random-user`", () -> {
+            step("Вводим логин `random-user`");
+            step("Вводим пароль `random-pass`");
             step("Нажимаем кнопку Войти");
         });
-        step("Проверяем что данные из Apple обновили информацию о пользователе", () -> {
-            step("Имя пользователя `Random User 10`");
-            step("Логин пользователя `random-user-10`");
-            step("Email пользователя `random-user-10@gmail.com`");
+        step("Проверяем что авторизовались правильно", () -> {
+            step("Логин `random-user`");
+            step("Имя `Mr Random`");
+            step("Аватарка");
         });
-        step("Разлогиниваемся");
     }
 
 }
