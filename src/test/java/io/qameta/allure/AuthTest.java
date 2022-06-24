@@ -54,4 +54,29 @@ public class AuthTest {
         step("Разлогиниваемся");
     }
 
+    @Test
+    @AllureId("10648")
+    @DisplayName("Авторизация через Facebook")
+    @Tags({@Tag("blocker"), @Tag("web")})
+    @Story("Авторизация через сторонние системы")
+    @Owner("admin")
+    @Feature("Авторизация")
+    public void testFacebookAuth() {
+        step("Открываем главную страницу");
+        step("Нажимаем кнопку Авторизация");
+        step("Выбираем способ авторизации через Facebook");
+        step("Авторизуемся как пользователь Artem Eroshenko", () -> {
+            step("Вводим логин eroshenkoam@gmail.com");
+            step("Вводим пароль 12398123981231");
+            step("Нажимаем кнопку Войти");
+        });
+        step("Должны оказаться на главной странице сайта");
+        step("Профиль пользователя должен быть заполнен из GoogleFacebook", () -> {
+            step("Имя Artem Eroshenko");
+            step("Login eroshenkoam");
+            step("Авататарка");
+        });
+        step("Разлогиниваемся");
+    }
+
 }
