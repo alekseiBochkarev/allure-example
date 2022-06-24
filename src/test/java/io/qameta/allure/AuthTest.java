@@ -58,9 +58,6 @@ public class AuthTest {
     @AllureId("10648")
     @DisplayName("Авторизация через Facebook")
     @Tags({@Tag("blocker"), @Tag("web")})
-    @Story("Авторизация через сторонние системы")
-    @Owner("admin")
-    @Feature("Авторизация")
     public void testFacebookAuth() {
         step("Открываем главную страницу");
         step("Нажимаем кнопку Авторизация");
