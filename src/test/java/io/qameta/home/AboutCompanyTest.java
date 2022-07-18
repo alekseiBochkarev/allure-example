@@ -13,7 +13,6 @@ import static io.qameta.allure.Allure.step;
 public class AboutCompanyTest {
 
     @Test
-    @AllureId("11222")
     @DisplayName("Проверка наличия адреса компании")
     @Tags({@Tag("minor"), @Tag("web")})
     @Owner("allure8")
@@ -24,7 +23,6 @@ public class AboutCompanyTest {
     }
 
     @Test
-    @AllureId("11223")
     @DisplayName("Проверка наличия лого компании и фото магазина на бэкграунде")
     @Tags({@Tag("minor"), @Tag("web")})
     @Owner("allure8")
@@ -36,14 +34,13 @@ public class AboutCompanyTest {
     }
 
     @Test
-    @AllureId("11213")
     @DisplayName("Проверка тайтла и дескрипшина")
     @Tags({@Tag("minor"), @Tag("web")})
     @Owner("allure8")
     @Feature("О компании")
     public void checkTitleAndDescription() {
         step("открыть страницу о компании");
-        step("проверить тайтл на наличие названия");
+        step("проверить тайтл на наличие названия и изменим 123");
         step("проверить дескрипшн на наличие описания");
     }
 }

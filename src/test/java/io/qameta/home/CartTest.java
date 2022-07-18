@@ -13,7 +13,6 @@ import static io.qameta.allure.Allure.step;
 public class CartTest {
 
     @Test
-    @AllureId("11215")
     @DisplayName("Добавление товара в корзину")
     @Tags({@Tag("blocker"), @Tag("web")})
     @Owner("allure8")
@@ -28,7 +27,6 @@ public class CartTest {
     }
 
     @Test
-    @AllureId("11216")
     @DisplayName("Удаление товара из корзины")
     @Tags({@Tag("major"), @Tag("web")})
     @Owner("allure8")
